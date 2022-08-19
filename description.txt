@@ -1,0 +1,12 @@
+Extensão Interna do Centro Integrado de Operações de Brasília para interagir exclusivamente com o Sistema SGO/SSP. Na primeira versão, ele 
+amplia as funcionalidades do módulo de Eventos.
+
+About this extension
+Essa extensão busca melhorar a interação do operador do sistema SGO, a fim de agilizar e aperfeiçoar o atendimento das ocorrências e gestão de eventos
+----------
+v. 0.0.1
+- Inserção de múltiplas datas e horários de eventos
+- Inclusão de IOA Coordenadora, Num SEI e Ponto de Encontro
+
+Developer comments
+Sugestões e erros observados serão sempre muito bem vindos. Sinta-se a vontade de comunicar qualquer observação para igor.muniz@ssp.df.gov.br

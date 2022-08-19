@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "SGO-CIOB",
+  "version": "0.5",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{6133cedb-7d14-4902-9aaa-7b96c8a4ba6e}"
+    }
+  },
+
+  "short_name": "SGO-CBMDF",
+  "description": "Extensão Interna do Sistema de Gerenciamento de Ocorrências - SGO para o CIOB",
+  "author": "Igor Muniz - TC QOBM/Comb.",
+  "icons": {
+    "48": "img/cbm.jpg"
+  },
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://sgo.ssp.df.gov.br/evento/evento/create*"
+      ],
+      "css":["css/eventos/base.css"],
+      "js":["js/jquery-2.1.1.min.js","js/eventos/vars.js","js/eventos/utils.js","js/eventos/main.js"]
+
+    }
+  ],
+  "web_accessible_resources": [
+    "js/*",
+    "css/*"
+  ]
+}
