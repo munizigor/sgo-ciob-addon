@@ -49,7 +49,7 @@ alteraBotaoCriar = function() {
 
 MontarNovoSubmit = function() {
   consolidaDadosObservacoes();
-  criarDataPorData();
+  criarDataPorData(divDias());
 }
 
 consolidaDadosObservacoes = function() {
@@ -65,23 +65,34 @@ consolidaDadosObservacoes = function() {
   document.getElementById("DSC_OBSERVACAO").value = observacoes_text;
 }
 
-criarDataPorData = function() {
+criarDataPorData = function(dates) {
       for (var i = 0; i < dates.length; i++) {
-        dataInicio = dates[i].dataInicio;
-        horaInicio = dates[i].horaInicio;
-        dataFim = dates[i].dataFim;
-        horaFim = dates[i].horaFim;
-        document.getElementById("dataIniEvento").value = dataInicio;
-        document.getElementById("horaIniEvento").value = horaInicio;
-        document.getElementById("dataFimEvento").value = dataFim;
-        document.getElementById("horaFimEvento").value = horaFim;
-        gerarDataHoraInicial();
-        gerarDataHoraFinal();
-        console.log("Criando evento " + i);
-        criar(this)
+        parseData(dates[i], "data_inicio", "DATA_INICIO");
+        parseData(dates[i], "data_fim", "DATE_FIM");
+        try {
+          criar(this); //TODO: Criar não está definido
+        }
+        catch (e) {
+          console.log(e);
+        }
     }
     alert("Eventos cadastrados com sucesso!");
   }
+
+parseData = function(divData, idOrigem,idDestino) {
+  var _d = 'numeric';
+  var _h = '2-digit';
+  var lan = 'pt-br';
+
+  var data = divData.getElementsByClassName(idOrigem)[0].value;
+  data = new Date(Date.parse(data))
+  data = data.toLocaleString([lan], {year: _d, month: _d, day: _d,hour: _h, minute: _h});
+  document.getElementById(idDestino).value = data;
+  console.log(idDestino+": " + data);
+}
+
+divDias = function () {return document.getElementsByClassName("data_field");}
+diasDeEvento = function () {return divDias().length;}
 
 adicionarScript = function(text) {
   var script = document.createElement("script");

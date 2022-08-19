@@ -4,16 +4,8 @@ function htmlDivDataIndividual (num) {
     <div class="form-group-sm col-md-4">
       <label class="control-label col-md-2"">Início</label
       >
-      <input
-        data-val="true"
-        data-val-date="O campo DATA_INICIO-${num} deve ser uma data."
-        id="DATA_INICIO-${num}"
-        type="hidden"
-        value=""
-      />
       <div class="col-md-5">
-        <input
-          id="dataIniEvento-${num}"
+        <input class="data_inicio"
           type="datetime-local"
           autocomplete="off"
           required="required"
@@ -21,17 +13,9 @@ function htmlDivDataIndividual (num) {
       </div>
     </div>
     <div class="form-group-sm col-md-3">
-      <label class="control-label col-md-2" for="DATE_FIM-${num}">Fim</label>
-      <input
-        data-val="true"
-        data-val-date="O campo DATE_FIM-${num} deve ser uma data."
-        id="DATE_FIM-${num}"
-        type="hidden"
-        value=""
-      />
+      <label class="control-label col-md-2">Fim</label>
       <div class="col-md-5">
-        <input
-          id="dataFimEvento-${num}"
+        <input class="data_fim"
           type="datetime-local"
           autocomplete="off"
           required="required"
@@ -39,10 +23,10 @@ function htmlDivDataIndividual (num) {
       </div>
     </div>
     <div class="form-group-sm col-md-1">
-        <span class="botao-add" id="add-1" title="Adicionar linha" onclick="adicionaData()"></span>
+        <span class="botao-add" title="Adicionar linha" onclick="adicionaData()"></span>
     </div>
     <div class="form-group-sm col-md-1">
-        <span class="botao-del" id="del-1" title="Excluir linha" onclick="removeData()"></span>
+        <span class="botao-del" title="Excluir linha" onclick="removeData()"></span>
     </div>
   `
 }
